@@ -1,23 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from './components/Form'
+import TodoList from './components/TodoApp'
 import './App.css'
 
 function App() {
+  const [inputText, setInputText] = useState('
+  ')
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <h3>
-            Moni<br></br>Todo App
-          </h3>
-        </header>
-        <div className="App-section">
-          <section className="Main-section">
-            <Form />
-          </section>
-        </div>
-      </div>
-    </>
+    <div className="App">
+      <header>
+        <h3>Moni's App</h3>
+      </header>
+      <Form></Form>
+      <TodoList></TodoList>
+    </div>
   )
 }
 

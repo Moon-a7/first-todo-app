@@ -1,4 +1,8 @@
 .App {
+  background-color: rgb(187, 226, 110);
+  display: inline;
+}
+/*.App {
   display: flex;
   align-items: center;
   text-align: center;
@@ -10,7 +14,7 @@
   color: rgb(255, 255, 255);
 }
 
-.App-header {
+App-header {
   color: #f8f9fc;
 }
 
