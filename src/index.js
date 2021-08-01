@@ -2,14 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import Form from './components/Form'
-import TodoList from './components/TodoList'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Form />
-    <TodoList />
   </React.StrictMode>,
   document.getElementById('root'),
 )

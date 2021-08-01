@@ -2,7 +2,7 @@
   background-color: rgb(187, 226, 110);
   display: inline;
 }
-/*.App {
+.App {
   display: flex;
   align-items: center;
   text-align: center;
@@ -21,7 +21,7 @@ App-header {
 .App-section {
   background-color:#2b6d7e;;
 }
-/*.App {
+.App {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
@@ -44,4 +44,10 @@ App-header {
 .App-link {
   color: rgb(120, 253, 198);
 }
-*/
+
+.todo-button {
+  height: 22px;
+  width: 22px;
+  
+
+}
