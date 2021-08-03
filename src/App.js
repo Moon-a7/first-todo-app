@@ -7,6 +7,54 @@ function App() {
   const [inputText, setInputText] = useState('')
   const [todos, setTodos] = useState([])
   const [status, setStatus] = useState('all')
+  const [filteredTodos, setFilteredTodos] = useState([])
+
+  useEffect(() => {
+    filterHandler()
+    saveLocalTodos()
+  }, [todos, status])
+    /*filterHandler() => {
+      switch (status) {
+        case 'completed':
+          setFilteredTodos(todos.filter((todo) => todo.completed))
+          break;
+          case 'uncompleted':
+            setFilteredTodos(todos.filter((todo) => todo.completed))
+          break;
+      }
+    }
+    */
+
+  
+  const filterHandler=()=> {
+    switch (status) {
+      case 'completed':
+        setFilteredTodos(todos.filter((todo) => todo.completed))
+        break;
+        case 'uncompleted':
+          setFilteredTodos(todos.filter((todo) => todo.completed))
+        break;
+        default:
+       setFilteredTodos(todos)
+       break   
+    }
+  }
+  
+  }
+const saveLocalTodos=()=>{
+  if ( localStorage.getItems('todos') ===null) {
+localStorage.setItem('todos', JSON.stringify([]))    
+  } else{
+localStorage.setItem('todos'. JSON.stringify(todos))
+  }
+}
+const getLocalTodos = ()=> {
+  if ( localStorage.getItems('todos') ===null) {
+    localStorage.setItem('todos', JSON.stringify([]))    
+      } else{
+    localStorage.setItem('todos'. JSON.stringify(todos))
+      }
+}
 
   return (
     <div className="App">
@@ -19,9 +67,12 @@ function App() {
         setTodos={setTodos}
         setInputText={setInputText}
       />
-      <TodoList setTodos={setTodos} todos {...todos} />
+      <TodoList
+        filteredTodos={filteredTodos}
+        setTodos={setTodos}
+        todos={todos}
+      />
     </div>
   )
-}
 
 export default App

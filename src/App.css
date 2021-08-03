@@ -48,7 +48,41 @@ App-header {
 .todo-button {
   height: 22px;
   width: 22px;
-  
-
 }
 */
+select::after {
+  content: '25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgb(63, 149, 219);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+header {
+  font-size: 2rem;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form button {
+  color: rgb(63, 149, 219);
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: rgb(63, 149, 219);
+  color: white;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+}
