@@ -50,6 +50,30 @@ App-header {
   width: 22px;
 }
 */
+.todo-item {
+  padding: 0rem 0, 5rem;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: rgb(63, 149, 219);
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
 select::after {
   content: '25BC';
   position: absolute;
@@ -59,6 +83,22 @@ select::after {
   background: rgb(63, 149, 219);
   cursor: pointer;
   pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* custom selector*/
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
 }
 
 header {
