@@ -13,7 +13,7 @@ function App() {
     filterHandler()
     saveLocalTodos()
   }, [todos, status])
-    /*filterHandler() => {
+  /*filterHandler() => {
       switch (status) {
         case 'completed':
           setFilteredTodos(todos.filter((todo) => todo.completed))
@@ -25,54 +25,43 @@ function App() {
     }
     */
 
-  
-  const filterHandler=()=> {
+  const filterHandler = () => {
     switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter((todo) => todo.completed))
-        break;
-        case 'uncompleted':
-          setFilteredTodos(todos.filter((todo) => todo.completed))
-        break;
-        default:
-       setFilteredTodos(todos)
-       break   
+        break
+      case 'uncompleted':
+        setFilteredTodos(todos.filter((todo) => todo.completed))
+        break
+      default:
+        setFilteredTodos(todos)
+        break
     }
   }
-  
-  }
-const saveLocalTodos=()=>{
-  if ( localStorage.getItems('todos') ===null) {
-localStorage.setItem('todos', JSON.stringify([]))    
-  } else{
-localStorage.setItem('todos'. JSON.stringify(todos))
-  }
 }
-const getLocalTodos = ()=> {
-  if ( localStorage.getItems('todos') ===null) {
-    localStorage.setItem('todos', JSON.stringify([]))    
-      } else{
-    localStorage.setItem('todos'. JSON.stringify(todos))
-      }
+const saveLocalTodos = () => {
+  if (localStorage.getItems('todos') === null) {
+    localStorage.setItem('todos', JSON.stringify([]))
+  } else {
+    localStorage.setItem('todos'.JSON.stringify(todos))
+  }
 }
 
-  return (
-    <div className="App">
-      <header>
-        <h4>Moni Todo List</h4>
-      </header>
-      <Form
-        inputText={inputText}
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-      />
-      <TodoList
-        filteredTodos={filteredTodos}
-        setTodos={setTodos}
-        todos={todos}
-      />
-    </div>
-  )
+function getLocalTodos() {}
+
+return (
+  <div className="App">
+    <header>
+      <h4>Moni Todo List</h4>
+    </header>
+    <Form
+      inputText={inputText}
+      todos={todos}
+      setTodos={setTodos}
+      setInputText={setInputText}
+    />
+    <TodoList filteredTodos={filteredTodos} setTodos={setTodos} todos={todos} />
+  </div>
+)
 
 export default App

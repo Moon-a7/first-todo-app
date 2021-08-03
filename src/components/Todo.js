@@ -15,12 +15,12 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       return item;
     })
     )
-
+    
   return (
-    <div className="todo">
+    <div className="todo"> 
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         
-        {text}<li>
+        {text}</li>
       
       <button className="complete-btn">
         <i className="fas fa-check"></i>
@@ -30,6 +30,8 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       </button>
     </div>
   )
+  }
+
 }
-}
+
 export default Todo

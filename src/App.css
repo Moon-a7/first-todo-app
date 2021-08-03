@@ -50,6 +50,9 @@ App-header {
   width: 22px;
 }
 */
+.todo li {
+  flex: 1;
+}
 .todo-item {
   padding: 0rem 0, 5rem;
 }
@@ -61,7 +64,14 @@ App-header {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
 }
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 
+complete-btn {
+  background: rgb(63, 149, 219);
+}
 
 .select {
   margin: 1rem;
@@ -83,11 +93,6 @@ select::after {
   background: rgb(63, 149, 219);
   cursor: pointer;
   pointer-events: none;
-}
-
-.completed {
-  text-decoration: line-through;
-  opacity: 0.5;
 }
 
 /* custom selector*/
