@@ -45,6 +45,7 @@ function App() {
       localStorage.setItem('todos', JSON.stringify(todos))
     }
   }
+
   function getLocalTodos() {}
 
   return (
@@ -54,11 +55,13 @@ function App() {
       </header>
       <Form
         inputText={inputText}
+        setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
-        setInputText={setInputText}
       />
+
       <TodoList
+        setInputText={setInputText}
         filteredTodos={filteredTodos}
         setTodos={setTodos}
         todos={todos}

@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Form = ({ setInputText, todos, setTodos, setStatus }) => {
-  
+const Form = ({ setInputText, inputText, todos, setTodos, setStatus }) => {
   const inputTextHandler = (e) => {
     console.log(e.target.value)
-    setInputText(e.target.value) // 2 opcja
+    setInputText(e.target.value)
   }
   const submitTodoHandler = (e) => {
     e.preventDefault()
@@ -20,6 +19,7 @@ const Form = ({ setInputText, todos, setTodos, setStatus }) => {
   return (
     <form>
       <input
+        value={inputText}
         onChange={inputTextHandler}
         type="text"
         className="todo-input"
