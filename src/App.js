@@ -10,20 +10,10 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([])
 
   useEffect(() => {
+    getLocalTodos()
     filterHandler()
     saveLocalTodos()
   }, [todos, status])
-  /*filterHandler() => {
-      switch (status) {
-        case 'completed':
-          setFilteredTodos(todos.filter((todo) => todo.completed))
-          break;
-          case 'uncompleted':
-            setFilteredTodos(todos.filter((todo) => todo.completed))
-          break;
-      }
-    }
-    */
 
   const filterHandler = () => {
     switch (status) {
@@ -39,14 +29,17 @@ function App() {
     }
   }
   const saveLocalTodos = () => {
-    if (localStorage.getItems('todos') === null) {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }
+  const getLocalTodos = () => {
+    if (localStorage.getItem('todos') === null) {
       localStorage.setItem('todos', JSON.stringify([]))
     } else {
-      localStorage.setItem('todos', JSON.stringify(todos))
+      let todoLocal = localStorage.setItem('todos', JSON.stringify(todos))
+      setTodos(todoLocal) // BŁĘÐY !!!
     }
+    function getLocalTodos() {} //wyżuc to
   }
-
-  function getLocalTodos() {}
 
   return (
     <div className="App">
@@ -58,9 +51,10 @@ function App() {
         setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
+        setStatus={setStatus}
       />
-
       <TodoList
+        inputText={inputText}
         setInputText={setInputText}
         filteredTodos={filteredTodos}
         setTodos={setTodos}
