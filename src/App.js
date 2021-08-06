@@ -48,9 +48,9 @@ function App() {
       </header>
       <Form
         inputText={inputText}
-        setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
+        setInputText={setInputText}
         setStatus={setStatus}
       />
       <TodoList
