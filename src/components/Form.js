@@ -34,5 +34,4 @@ const Form = ({ setInputText, inputText, todos, setTodos, setStatus }) => {
     </form>
   )
 }
-
 export default Form
