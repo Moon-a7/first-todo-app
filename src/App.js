@@ -9,7 +9,7 @@ function App() {
   const [status, setStatus] = useState('all')
   const [filteredTodos, setFilteredTodos] = useState([])
 
-  useEffect(() => {
+  useEffect(() => { 
     getLocalTodos()
     filterHandler()
     saveLocalTodos()

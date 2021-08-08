@@ -1,72 +1,31 @@
-/*.App {
-  background-color: rgb(187, 226, 110);
-  display: inline;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.App {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: #3d3e41;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(255, 255, 255);
-}
-
-App-header {
-  color: #f8f9fc;
-}
-
-.App-section {
-  background-color:#2b6d7e;;
-}
-.App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-image: linear-gradient(120deg);
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 2rem;
 }
 
-
-
-.App-section {
-  text-align: inherit;
-  display: inline;
-
-  justify-content: center;
-}
-.App-link {
-  color: rgb(120, 253, 198);
-}
-
-.todo-button {
-  height: 22px;
-  width: 22px;
-}
-*/
 .todo li {
   flex: 1;
 }
 .todo-item {
-  padding: 0rem 0, 5rem;
+  padding: 0rem 0.5rem;
 }
 .fa-trash,
 .fa-check {
   pointer-events: none;
 }
 .fall {
-  transform: translateY(10rem) rotateZ(20deg);
+  transform: translateY(10rem) rotateZ(120deg, rgb(63, 149, 219) 0%);
   opacity: 0;
-}
-.completed {
-  text-decoration: line-through;
-  opacity: 0.5;
 }
 
 complete-btn {
@@ -94,27 +53,35 @@ select::after {
   cursor: pointer;
   pointer-events: none;
 }
-
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 /* custom selector*/
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
+  outline: 0;
   box-shadow: none;
   border: 0 !important;
   background-image: none;
 }
 
-header {
-  font-size: 2rem;
-}
 header,
 form {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+form input,
+form button {
+  padding: 0rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
 }
 
 form button {
@@ -130,4 +97,38 @@ form button:hover {
 .todo-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+.trash-btn,
+.complete-btn {
+  background: rgb(63, 149, 219);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(240, 168, 12);
 }

@@ -13,6 +13,9 @@ const Form = ({ setInputText, inputText, todos, setTodos, setStatus }) => {
     ])
     setInputText('')
   }
+  const statusHandler = (e) => {
+    console.log(e)
+  }
   return (
     <form>
       <input
@@ -25,11 +28,11 @@ const Form = ({ setInputText, inputText, todos, setTodos, setStatus }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo"></select>
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Uncompleted</option>
-        <select />
+        <select name="todos" className="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
       </div>
     </form>
   )
