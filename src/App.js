@@ -9,7 +9,7 @@ function App() {
   const [status, setStatus] = useState('all')
   const [filteredTodos, setFilteredTodos] = useState([])
 
-  useEffect(() => { 
+  useEffect(() => {
     getLocalTodos()
     filterHandler()
     saveLocalTodos()
@@ -18,11 +18,11 @@ function App() {
   const filterHandler = () => {
     switch (status) {
       case 'completed':
-        setFilteredTodos(todos.filter((todo) => todo.completed))
+        setFilteredTodos(todos.filter((todo) => todo.completed === true))
         break
       case 'uncompleted':
-        setFilteredTodos(todos.filter((todo) => todo.completed))
-        break
+        setFilteredTodos(todos.filter((todo) => todo.completed === false))
+        break //tutu
       default:
         setFilteredTodos(todos)
         break
@@ -63,5 +63,4 @@ function App() {
     </div>
   )
 }
-
 export default App
