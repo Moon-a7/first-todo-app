@@ -11,6 +11,10 @@ function App() {
 
   useEffect(() => {
     getLocalTodos()
+  }, [])
+
+  useEffect(() => {
+    //getLocalTodos()
     filterHandler()
     saveLocalTodos()
   }, [todos, status])
@@ -22,12 +26,13 @@ function App() {
         break
       case 'uncompleted':
         setFilteredTodos(todos.filter((todo) => todo.completed === false))
-        break //tutu
+        break
       default:
         setFilteredTodos(todos)
         break
     }
   }
+
   const saveLocalTodos = () => {
     localStorage.setItem('todos', JSON.stringify(todos))
   }
@@ -35,9 +40,10 @@ function App() {
     if (localStorage.getItem('todos') === null) {
       localStorage.setItem('todos', JSON.stringify([]))
     } else {
-      let todoLocal = localStorage.setItem('todos', JSON.stringify(todos))
-      setTodos(todoLocal) // BŁĘÐY !!!
+      let todoLocal = JSON.parse(localStorage.getItem('todos'))
+      setTodos(todoLocal)
     }
+
     function getLocalTodos() {} //wyżuc to
   }
 
@@ -54,8 +60,6 @@ function App() {
         setStatus={setStatus}
       />
       <TodoList
-        inputText={inputText}
-        setInputText={setInputText}
         filteredTodos={filteredTodos}
         setTodos={setTodos}
         todos={todos}
